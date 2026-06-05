@@ -65,7 +65,8 @@ These dependencies will be installed when you run `pip install -r src/requiremen
 | POST   | `/activities/{activity_name}/signup?email=student@mergington.edu` | Sign up for an activity                                             |
 
 > [!IMPORTANT]
-> All data is stored in memory, which means data will be reset when the server restarts.
+> All data is persisted in MongoDB (local instance, `mongodb://localhost:27017/`, database `mergington_high`).
+> Data survives server restarts. The database is seeded automatically on first run if collections are empty.
 >
 > ### User Interaction
 
