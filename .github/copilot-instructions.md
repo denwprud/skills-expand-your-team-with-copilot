@@ -92,11 +92,7 @@ Seeded on first run by `database.init_database()` (only if collections are empty
 
 **Seeded teacher accounts:**
 
-| username    | display_name        | role    | password |
-|-------------|---------------------|---------|----------|
-| mrodriguez  | Ms. Rodriguez       | teacher | art123   |
-| mchen       | Mr. Chen            | teacher | chess456 |
-| principal   | Principal Martinez  | admin   | admin789 |
+Three accounts are seeded on first run: `mrodriguez` (teacher), `mchen` (teacher), and `principal` (admin). Their default passwords are defined in `src/backend/database.py` in the `initial_teachers` list. Do not hardcode or document plaintext passwords outside of that seeding file.
 
 ---
 
@@ -126,9 +122,9 @@ def login(username: str, password: str):
     return {"username": teacher["username"], "display_name": teacher["display_name"], "role": teacher["role"]}
 ```
 
-### 2. Stale documentation in `docs/how-to-develop.md`
+### 2. Stale documentation in `docs/how-to-develop.md` (fixed)
 
-The doc says "All data is stored in memory, which means data will be reset when the server restarts." This is **outdated** — data is persisted in MongoDB. Update that note if editing the docs.
+The doc previously said "All data is stored in memory, which means data will be reset when the server restarts." This was **outdated** — data is persisted in MongoDB. The note has been corrected to reflect that data survives restarts and is seeded automatically on first run.
 
 ---
 
